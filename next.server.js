@@ -2,6 +2,7 @@ const next = require('next');
 
 const { server, listen } = require('./server');
 const authentication = require('./server/middleware/authentication');
+const { NODE_ENV } = process.env;
 
 const dev = NODE_ENV !== 'production';
 const app = next({ dev, dir: 'src' })

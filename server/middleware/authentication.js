@@ -1,6 +1,6 @@
 const axios = require('axios')
 const _ = require('lodash')
-
+const debug = require('../shared/debug-logger')
 const { BASE_URL } = process.env
 const http = axios.create({ baseURL: BASE_URL })
 

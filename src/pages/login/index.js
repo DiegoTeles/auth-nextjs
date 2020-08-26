@@ -14,7 +14,6 @@ export default function Login() {
     <div >
       <Head>
         <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
