@@ -1,15 +1,6 @@
 import Head from 'next/head';
-import authAPI from '../../api/auth';
 
 export default function Login() {
-  async function loginNow(e) {
-    authAPI.login({
-      user: e.target.value.user,
-      password: e.target.value.password,
-    }).then(
-      window.location.assign('/dashboard')
-    )
-  }
   return (
     <div >
       <Head>
@@ -17,9 +8,9 @@ export default function Login() {
       </Head>
 
       <main>
-        <form onSubmit={loginNow}>
-          <input type="text" name="user">Usuário</input>
-          <input type="password" name="password">Senha</input>
+        <form>
+          <input type="text" name="user" />
+          <input type="password" name="password" />
           <button type="submit">Login</button>
         </form>
 

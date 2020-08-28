@@ -1,0 +1,130 @@
+{
+  "settings": {
+    "import/resolver": {
+      "babel-module": {
+        "cwd": "./"
+      }
+    }
+  },
+  "parser": "babel-eslint",
+  "extends": ["prettier", "airbnb"],
+  "plugins": ["babel", "import", "react-hooks"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "globals": {
+    "__CLIENT__": true,
+    "__SERVER__": true,
+    "__VERSION__": true,
+  },
+  "rules": {
+    "import/prefer-default-export": 0,
+    "no-shadow": 0,
+    "no-use-before-define": 0,
+    "react/destructuring-assignment": 0,
+    "react/jsx-one-expression-per-line": 0,
+    "prefer-promise-reject-errors": 1,
+    "camelcase": 0,
+    "react/prop-types": 0,
+    "jsx-a11y/no-noninteractive-element-interactions": 1,
+    "jsx-a11y/label-has-for": [ 2, {
+      "required": {
+        "every": ["id"]
+      }
+    }],
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": ["Link"],
+      "specialLink": ["hrefLeft", "hrefRight"],
+      "aspects": ["invalidHref", "preferButton"]
+    }],
+    "indent": ["error", 2, { "MemberExpression": 1 }],
+    "arrow-parens": [2, "as-needed"],
+    "semi": [2, "never"],
+    "global-require": 0,
+    "generator-star-spacing": [
+      2, {
+        "before": true,
+        "after": false
+      }
+    ],
+    "no-underscore-dangle": 0,
+    "react/jsx-filename-extension": 0,
+    "import/extensions": [
+      2,
+      "never", {
+        "css": "always",
+        "svg": "always",
+        "json": "always"
+      }
+    ],
+    "consistent-return": 0,
+    "no-unused-expressions": [
+      2, {
+        "allowShortCircuit": true
+      }
+    ],
+    "no-unused-vars": [
+      2, {
+        "argsIgnorePattern": "_"
+      }
+    ],
+    "react/sort-comp": [
+      2, {
+        "order": [
+          "static-properties",
+          "static-methods",
+          "lifecycle",
+          "render",
+          "/^render.+$/",
+          "/^on.+$/",
+          "everything-else"
+        ],
+        "groups": {
+          "lifecycle": [
+            "propTypes",
+            "statics",
+            "state",
+            "defaultProps",
+            "getDefaultProps",
+            "constructor",
+            "getInitialState",
+            "getChildContext",
+            "componentWillMount",
+            "componentDidMount",
+            "componentWillReceiveProps",
+            "shouldComponentUpdate",
+            "componentWillUpdate",
+            "componentDidUpdate",
+            "componentDidCatch",
+            "componentWillUnmount"
+          ]
+        }
+      }
+    ],
+    "class-methods-use-this": 1,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/anchor-has-content": 1,
+    "jsx-a11y/no-static-element-interactions": 1,
+    "react/forbid-prop-types": 1,
+    "react/no-unused-prop-types": [
+      1, {
+        "skipShapeProps": true
+      }
+    ],
+    "import/no-extraneous-dependencies": ["error", {
+      "packageDir": "./",
+      "devDependencies": [
+        "**/*.test.js",
+        "**/*.spec.js",
+        "**/*.storybook.js",
+        "./config/**/*.js",
+        "**/.storybook/**/*"
+      ]
+    }],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+}

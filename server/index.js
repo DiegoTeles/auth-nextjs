@@ -13,6 +13,7 @@ const pkg = require('../package.json')
 
 
 const tokenDecoder = require('./middleware/token-decoder')
+const codeErrorHandler = require('./middleware/code-error-handler')
 
 const server = express()
 const port = parseInt(process.env.PORT, 10) || 3000
@@ -30,7 +31,8 @@ const listen = () => {
 }
 
 server.set('trust proxy', 1)
-//server.use(favicon(path.join(__dirname, '..', 'public', 'favicon.png')))
+server.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')))
+
 server.use(morgan('dev'))
 server.use(compression())
 server.use(helmet())
@@ -44,6 +46,8 @@ server.use(bodyParser.urlencoded({
 server.use(tokenDecoder)
 
 server.use('/api', apiRoutes())
+server.use('/', express.static(path.resolve(__dirname, '..', 'public')))
+server.use(codeErrorHandler())
 
 
 module.exports = { server, listen }
