@@ -4,8 +4,7 @@ export default function Home() {
   return (
     <div >
       <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Create Next App</title> 
       </Head>
 
       <main >
