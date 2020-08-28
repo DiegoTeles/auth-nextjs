@@ -1,0 +1,30 @@
+{
+  "presets": [
+    [
+      "next/babel", {
+        "preset-env": {
+          "modules": "commonjs"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "inline-react-svg", {
+        "svgo": {
+          "plugins": [{
+            "cleanupIDs": {
+              "minify": false
+            }
+          }]
+        }
+      }
+    ],
+    [
+      "module-resolver", {
+        "root": ["./src"],
+      }
+    ],
+    "@babel/plugin-transform-runtime"
+  ]
+}

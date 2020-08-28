@@ -3,21 +3,49 @@
   "version": "0.1.0",
   "private": false,
   "scripts": {
-    "start:dev": "nodemon --inspect -r ./next.server.js",
-    "start": "cross-env NODE_ENV=production BABEL_ENV=production node next.server.js"
+    "dev": "node next.server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node next.server.js"
   },
   "dependencies": {
     "axios": "^0.20.0",
+    "babel-plugin-inline-react-svg": "^1.1.1",
+    "babel-plugin-module-resolver": "^4.0.0",
     "body-parser": "^1.19.0",
+    "case-sensitive-paths-webpack-plugin": "^2.3.0",
     "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
     "cross-env": "^7.0.2",
+    "debug": "^4.1.1",
     "dotenv-safe": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^4.1.0",
+    "http-status-codes": "^2.1.2",
+    "install": "^0.13.0",
+    "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "next": "9.5.2",
+    "node-sass": "^4.14.1",
+    "nodemon": "^2.0.4",
+    "npm": "^6.14.8",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "sass": "^1.26.10",
+    "sass-loader": "^10.0.1",
     "serve-favicon": "^2.5.0"
-  }
+  },
+  "nodemonConfig": {
+    "watch": [
+      "next.server.js",
+      "next.config.js",
+      "config/",
+      "server/"
+    ]
+  },
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ]
 }
