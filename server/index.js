@@ -32,6 +32,7 @@ const listen = () => {
 
 server.set('trust proxy', 1)
 server.use(favicon(path.join(__dirname, '..', 'public', 'favicon.ico')))
+
 server.use(morgan('dev'))
 server.use(compression())
 server.use(helmet())
