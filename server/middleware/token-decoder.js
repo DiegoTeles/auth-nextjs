@@ -1,10 +1,12 @@
 const jwt = require('jsonwebtoken')
 
 module.exports = (req, res, next) => {
-    const token = req.cookies && req.cookies['ALGUMA_COISA']
+  const token = req.cookies && req.cookies['beero.legalCustomerToken']
 
-    if (token) {
-        req.token = token
-        req.decodeToken = jwt.decode(token)
-    }
+  if (token) {
+    req.token = token
+    req.decodedToken = jwt.decode(token)
+  }
+
+  next()
 }
