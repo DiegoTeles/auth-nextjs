@@ -33,14 +33,6 @@
     "sass-loader": "^10.0.1",
     "serve-favicon": "^2.5.0"
   },
-  "nodemonConfig": {
-    "watch": [
-      "next.server.js",
-      "next.config.js",
-      "config/",
-      "server/"
-    ]
-  },
   "browserslist": [
     ">0.3%",
     "not ie 11",
